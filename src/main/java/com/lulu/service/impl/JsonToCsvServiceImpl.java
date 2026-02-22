@@ -47,7 +47,7 @@ public class JsonToCsvServiceImpl implements JsonToCsvService {
     @Override
     public void upsertAndUpload(Map<String, Object> record) {
 
-        log.info("Starting upsert operation for record with id: {}", record.get("id"));
+        log.info("Starting upsert operation for record with id: {}", record.get("partnerId"));
 
         if (record == null || record.isEmpty()) {
             log.warn("Received empty JSON payload for upsert");
@@ -90,7 +90,7 @@ public class JsonToCsvServiceImpl implements JsonToCsvService {
 
         if (!updated) {
             log.info("No existing record found for id: {}. Inserting new row.",
-                    newRecord.get("id"));
+                    newRecord.get("partnerId"));
             rows.add(newRecord);
         }
 
@@ -101,6 +101,6 @@ public class JsonToCsvServiceImpl implements JsonToCsvService {
         String updatedCsv = CsvUtil.convertToCsv(objectRows);
         log.info("Uploading updated CSV to S3. Total records after upsert: {}", rows.size());
         s3Service.uploadCsv(updatedCsv);
-        log.info("Upsert operation completed successfully for id: {}", newRecord.get("id"));
+        log.info("Upsert operation completed successfully for id: {}", newRecord.get("partnerId"));
     }
 }
