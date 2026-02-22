@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
-
 @Component
 @Slf4j
 public class ScheduledJob {
@@ -27,16 +26,17 @@ public class ScheduledJob {
 
         Random random = new Random();
 
-        Map<String, Object> payload = Map.of(
-                "partnerId", "P" + random.nextInt(10000),
-                "nuOrderNo", "NU-" + UUID.randomUUID().toString().substring(0, 8),
-                "omnOrderNo", "OM-" + UUID.randomUUID().toString().substring(0, 8),
-                "releaseNo", "R" + random.nextInt(10),
-                "styleOption", randomStyle(),
-                "purchaseCycle", "Cycle-" + random.nextInt(5),
-                "skuCount", random.nextInt(50) + 1,
-                "season", randomSeason()
-        );
+        // ✅ Create mutable map
+        Map<String, Object> payload = new java.util.HashMap<>();
+
+        payload.put("partnerId", "P" + random.nextInt(10000));
+        payload.put("nuOrderNo", "NU-" + UUID.randomUUID().toString().substring(0, 8));
+        payload.put("omnOrderNo", "OM-" + UUID.randomUUID().toString().substring(0, 8));
+        payload.put("releaseNo", "R" + random.nextInt(10));
+        payload.put("styleOption", randomStyle());
+        payload.put("purchaseCycle", "Cycle-" + random.nextInt(5));
+        payload.put("skuCount", random.nextInt(50) + 1);
+        payload.put("season", randomSeason());
 
         log.info("Generated payload: {}", payload);
 
