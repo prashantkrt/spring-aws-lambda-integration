@@ -79,10 +79,10 @@ public class JsonToCsvServiceImpl implements JsonToCsvService {
         boolean updated = false;
         for (Map<String, String> row : rows) {
 
-            if (Objects.equals(row.get("id"), newRecord.get("id"))) {
-                log.info("Matching record found for id: {}. Updating existing row.",
-                        newRecord.get("id"));
-                newRecord.forEach((K,V)->record.put(K,V));
+            if (Objects.equals(row.get("partnerId"), newRecord.get("partnerId")) &&
+                    Objects.equals(row.get("nuOrderNo"), newRecord.get("nuOrderNo"))) {
+                log.info("Starting upsert operation for partnerId: {}", record.get("partnerId"));
+                newRecord.forEach((K, V) -> record.put(K, V));
                 updated = true;
                 break;
             }
