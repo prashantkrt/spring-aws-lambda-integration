@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78a65cca-d644-4c94-b19e-1afa461f7988" name="Changes" comment="integrate Spring Boot app with AWS Lambda using serverless">
-      <change beforePath="$PROJECT_DIR$/src/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771753500151</updated>
-      <workItem from="1771753501178" duration="3136000" />
+      <workItem from="1771753501178" duration="3440000" />
     </task>
     <task id="LOCAL-00001" summary="integrate Spring Boot app with AWS Lambda using serverless">
       <option name="closed" value="true" />
