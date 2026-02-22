@@ -19,7 +19,6 @@ Resources:
             BucketName: json-csv-demo-bucket-123
       Timeout: 30
       Events:
-        Events:
         ApiTrigger:
             Type: Api
             Properties:
