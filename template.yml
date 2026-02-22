@@ -11,9 +11,12 @@ Resources:
     Properties:
       Handler: com.lulu.StreamLambdaHandler::handleRequest
       Runtime: java21
-      CodeUri: .
+      CodeUri: target/DataIntegrationPOC-1.0-SNAPSHOT.jar
       MemorySize: 512
-      Policies: AWSLambdaBasicExecutionRole
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - S3CrudPolicy:
+            BucketName: json-csv-demo-bucket-123
       Timeout: 30
       Events:
         ProxyResource:
