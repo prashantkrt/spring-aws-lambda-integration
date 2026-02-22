@@ -19,8 +19,8 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      - name: Build application
-        run: mvn clean package -Passembly-zip
+      - name: Build project
+        run: mvn clean package -Pshaded-jar
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
