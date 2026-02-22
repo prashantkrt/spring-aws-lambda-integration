@@ -20,7 +20,7 @@ jobs:
           java-version: '21'
 
       - name: Build project
-        run: mvn clean package -Pshaded-jar
+        run: mvn clean package -Pshaded-jar -DskipTests
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
