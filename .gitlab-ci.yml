@@ -1,0 +1,17 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  image: public.ecr.aws/sam/build-java21
+  script:
+    - mvn clean package -Pshaded-jar -DskipTests
+    - sam deploy \
+      --stack-name spring-serverless-dataflow-gl \
+      --template-file template.yml \
+      --capabilities CAPABILITY_IAM \
+      --resolve-s3 \
+      --no-confirm-changeset \
+      --no-fail-on-empty-changeset
+  only:
+    - main
