@@ -104,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771753500151</updated>
-      <workItem from="1771753501178" duration="3682000" />
+      <workItem from="1771753501178" duration="3801000" />
     </task>
     <task id="LOCAL-00001" summary="integrate Spring Boot app with AWS Lambda using serverless">
       <option name="closed" value="true" />

@@ -36,7 +36,7 @@ jobs:
         run: |
           sam deploy \
             --stack-name spring-serverless-dataflow \
-            --template-file template.yaml \
+            --template-file template.yml \
             --capabilities CAPABILITY_IAM \
             --resolve-s3 \
             --no-confirm-changeset \
