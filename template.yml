@@ -19,6 +19,18 @@ Resources:
             BucketName: json-csv-demo-bucket-123
       Timeout: 30
       Events:
+        Events:
+        ApiTrigger:
+            Type: Api
+            Properties:
+              Path: /{proxy+}
+              Method: any
+
+        ScheduledTrigger:
+            Type: Schedule
+            Properties:
+              Schedule: rate(15 minutes)
+
         ProxyResource:
           Type: Api
           Properties:
