@@ -1,0 +1,6 @@
+app:
+  s3:
+    bucket-name: ${S3_BUCKET_NAME:json-csv-demo-bucket-123}
+    output-folder: ${S3_OUTPUT_FOLDER:output}
+    region: ${AWS_REGION:ap-south-1}
+    file-name: ${S3_FILE_NAME:data.csv}

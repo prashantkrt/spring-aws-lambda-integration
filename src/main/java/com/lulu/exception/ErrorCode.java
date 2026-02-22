@@ -1,0 +1,12 @@
+package com.lulu.exception;
+
+public enum ErrorCode {
+    INVALID_PAYLOAD,
+    MISSING_FIELD,
+    INVALID_FORMAT,
+    S3_OPERATION_FAILED,
+    CSV_PROCESSING_ERROR,
+    S3_FILE_NOT_FOUND,
+    GENERIC_ERROR,
+    RESOURCE_NOT_FOUND
+}
