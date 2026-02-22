@@ -19,14 +19,13 @@ public class ScheduledJob {
         this.service = service;
     }
 
-    @EventListener
     public void handleScheduleEvent(Object event) {
 
         log.info("Cron triggered: {}", event);
 
         Random random = new Random();
 
-        // ✅ Create mutable map
+        // Create mutable map
         Map<String, Object> payload = new java.util.HashMap<>();
 
         payload.put("partnerId", "P" + random.nextInt(10000));
