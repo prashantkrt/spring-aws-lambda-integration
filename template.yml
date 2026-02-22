@@ -30,12 +30,6 @@ Resources:
             Properties:
               Schedule: rate(15 minutes)
 
-        ProxyResource:
-          Type: Api
-          Properties:
-            Path: /{proxy+}
-            Method: any
-
 Outputs:
   DataIntegrationPOCApi:
     Description: URL for application
